@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -21,7 +22,7 @@ public class Imenik {
             if (e.getValue().equals(ime))
                 return e.getKey().ispisi();
         }
-        return "Ne postoji broj pod tim imenom!";
+        return "Ne postoji broj pod tim imenom!"; /*dodaj svoj izuzetak*/
     }
 
     public String naSlovo (char slovo) {
@@ -37,7 +38,14 @@ public class Imenik {
     }
 
     Set<String> izGrada (Grad g) {
-        return null;
+        HashSet<String> osobeIzGrada = new HashSet<>();
+        for(HashMap.Entry<TelefonskiBroj,String> entry : imenik.entrySet()) {
+            if (entry.getKey() instanceof FiksniBroj) {
+                if( ((FiksniBroj) entry.getKey()).getGrad() == g )
+                    osobeIzGrada.add(entry.getValue());
+            }
+        }
+        return osobeIzGrada;
     }
 
     Set<TelefonskiBroj> izGradaBrojevi (Grad g) {

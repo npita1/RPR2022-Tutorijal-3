@@ -21,4 +21,8 @@ public class FiksniBroj extends TelefonskiBroj{
     public int hasCode() {
         return Objects.hash(this.grad, this.fiksniBroj);
     }
+
+    public Grad getGrad() {
+        return grad;
+    }
 }
