@@ -1,5 +1,8 @@
 package ba.unsa.etf.rpr;
 
+import java.util.Iterator;
+import java.util.Set;
+
 public class Program
 {
     public static void main( String[] args )
@@ -24,7 +27,16 @@ public class Program
 
         System.out.println(imenik.naSlovo('M'));
 
+        FiksniBroj fiksni2 = new FiksniBroj("789 - 112", Grad.TUZLA);
+        imenik.dodaj("Fiksin Brat",fiksni2);
 
+        Set<String> osobeIzGrada = imenik.izGrada(Grad.TUZLA);
+        Iterator it = osobeIzGrada.iterator();
+        while(it.hasNext()) {
+            System.out.println(it.next());
+        }
+
+        Set<TelefonskiBroj> brojeviIzGrada = imenik.izGradaBrojevi(Grad.TUZLA);
 
     }
 }

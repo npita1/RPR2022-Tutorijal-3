@@ -3,6 +3,7 @@ package ba.unsa.etf.rpr;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 
 public class Imenik {
@@ -49,7 +50,14 @@ public class Imenik {
     }
 
     Set<TelefonskiBroj> izGradaBrojevi (Grad g) {
-        return null;
+        TreeSet<TelefonskiBroj> brojeviIzGrada = new TreeSet<>();
+        for(HashMap.Entry<TelefonskiBroj,String> entry : imenik.entrySet()) {
+            if (entry.getKey() instanceof FiksniBroj) {
+                if( ((FiksniBroj) entry.getKey()).getGrad() == g )
+                    brojeviIzGrada.add(entry.getKey());
+            }
+        }
+        return brojeviIzGrada;
     }
 
 }
