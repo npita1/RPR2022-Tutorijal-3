@@ -21,4 +21,5 @@ public class MobilniBroj extends TelefonskiBroj{
     public int hasCode() {
         return Objects.hash(mobilnaMreza,mobilniBroj);
     }
+
 }

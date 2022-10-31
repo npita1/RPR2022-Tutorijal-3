@@ -24,4 +24,5 @@ public class MedunarodniBroj extends TelefonskiBroj{
     public int hasCode() {
         return Objects.hash(drzava,broj);
     }
+
 }

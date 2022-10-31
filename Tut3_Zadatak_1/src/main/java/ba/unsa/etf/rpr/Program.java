@@ -9,7 +9,7 @@ public class Program
     {
        Imenik imenik = new Imenik();
        MobilniBroj mobitel = new MobilniBroj(61, "147-258");
-       FiksniBroj fiksni = new FiksniBroj("123-456", Grad.TUZLA);
+       FiksniBroj fiksni = new FiksniBroj("987-456", Grad.TUZLA);
        MedunarodniBroj medunarodni = new MedunarodniBroj("+387", "62 456-789");
 
        imenik.dodaj("Mobilni Mobilic", mobitel);
@@ -27,7 +27,7 @@ public class Program
 
         System.out.println(imenik.naSlovo('M'));
 
-        FiksniBroj fiksni2 = new FiksniBroj("789 - 112", Grad.TUZLA);
+        FiksniBroj fiksni2 = new FiksniBroj("789-112", Grad.TUZLA);
         imenik.dodaj("Fiksin Brat",fiksni2);
 
         Set<String> osobeIzGrada = imenik.izGrada(Grad.TUZLA);
@@ -37,6 +37,10 @@ public class Program
         }
 
         Set<TelefonskiBroj> brojeviIzGrada = imenik.izGradaBrojevi(Grad.TUZLA);
+        it = brojeviIzGrada.iterator();
+        while(it.hasNext()) {
+            System.out.println(it.next());
+        }
 
     }
 }

@@ -41,10 +41,10 @@ public class Imenik {
     Set<String> izGrada (Grad g) {
         HashSet<String> osobeIzGrada = new HashSet<>();
         for(HashMap.Entry<TelefonskiBroj,String> entry : imenik.entrySet()) {
-            if (entry.getKey() instanceof FiksniBroj) {
+            if (entry.getKey() instanceof FiksniBroj)
                 if( ((FiksniBroj) entry.getKey()).getGrad() == g )
                     osobeIzGrada.add(entry.getValue());
-            }
+
         }
         return osobeIzGrada;
     }
@@ -52,10 +52,9 @@ public class Imenik {
     Set<TelefonskiBroj> izGradaBrojevi (Grad g) {
         TreeSet<TelefonskiBroj> brojeviIzGrada = new TreeSet<>();
         for(HashMap.Entry<TelefonskiBroj,String> entry : imenik.entrySet()) {
-            if (entry.getKey() instanceof FiksniBroj) {
+            if (entry.getKey() instanceof FiksniBroj)
                 if( ((FiksniBroj) entry.getKey()).getGrad() == g )
                     brojeviIzGrada.add(entry.getKey());
-            }
         }
         return brojeviIzGrada;
     }
