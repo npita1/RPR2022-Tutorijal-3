@@ -59,4 +59,7 @@ public class Imenik {
         return brojeviIzGrada;
     }
 
+    public HashMap<TelefonskiBroj, String> getImenik() {
+        return imenik;
+    }
 }
