@@ -18,12 +18,12 @@ public class Imenik {
          return imenik.get(broj);
     }
 
-    public String dajBroj (String ime) {
-        for (HashMap.Entry<TelefonskiBroj,String> e : imenik.entrySet()) {
-            if (e.getValue().equals(ime))
-                return e.getKey().ispisi();
-        }
-        return "Ne postoji broj pod tim imenom!"; /*dodaj svoj izuzetak*/
+    public String dajBroj (String ime) throws NePostojiBrojException {
+            for (HashMap.Entry<TelefonskiBroj, String> e : imenik.entrySet()) {
+                if (e.getValue().equals(ime))
+                    return e.getKey().ispisi();
+            }
+            throw new NePostojiBrojException("Ne postoji broj pod tim imenom!");
     }
 
     public String naSlovo (char slovo) {

@@ -20,10 +20,14 @@ public class Program
        System.out.println(imenik.dajIme(fiksni));
        System.out.println(imenik.dajIme(medunarodni));
 
-        System.out.println(imenik.dajBroj("Mobilni Mobilic"));
-        System.out.println(imenik.dajBroj("Fikso Fiksic"));
-        System.out.println(imenik.dajBroj("Medunarod Medunarodic"));
-        System.out.println(imenik.dajBroj("Nepostojan Nepostojic"));
+       try {
+           System.out.println(imenik.dajBroj("Mobilni Mobilic"));
+           System.out.println(imenik.dajBroj("Fikso Fiksic"));
+           System.out.println(imenik.dajBroj("Medunarod Medunarodic"));
+           System.out.println(imenik.dajBroj("Nepostojan Nepostojic"));
+       } catch (NePostojiBrojException e) {
+           System.out.println(e.getMessage());
+       }
 
         System.out.println(imenik.naSlovo('M'));
 
