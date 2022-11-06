@@ -34,9 +34,9 @@ class ImenikTest {
         imenik.dodaj("Fikso Fiksic", fiksni);
         imenik.dodaj("Medunarod Medunarodic", medunarodni);
 
-        assertEquals("1. Medunarod Medunarodic - +387 62 456-789 \n2. Mobilni Mobilic - 061/147-258 \n", imenik.naSlovo('M'));
+        assertEquals("1. Mobilni Mobilic - 061/147-258 \n2. Medunarod Medunarodic - +387 62 456-789 \n", imenik.naSlovo('M'));
     }
-
+    
     @Test
     void dajIme(){
         Imenik imenik = new Imenik();
@@ -45,10 +45,10 @@ class ImenikTest {
         assertEquals("Mobilni Mobilic", imenik.dajIme(mobitel));
     }
 
-//    @Test
-//    void dajBroj() throws NePostojiBrojException {
-//        Imenik imenik = new Imenik();
-//        Exception exception = assertThrows(NePostojiBrojException.class, imenik.dajBroj("Nepostojan Nepostojić"));
-//
-//    }
+    @Test
+    void dajBroj() throws NePostojiBrojException {
+        Imenik imenik = new Imenik();
+        Exception exception = assertThrows(NePostojiBrojException.class, () -> imenik.dajBroj("Nepostojan Nepostojić"),"Nije bacen izuzetak");
+        assertTrue(exception.getMessage().contains("Ne postoji broj pod tim imenom!"));
+    }
 }
